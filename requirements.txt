@@ -1,3 +1,5 @@
+numpy
+requests
+setuptools
 torch
 torchvision
-numpy

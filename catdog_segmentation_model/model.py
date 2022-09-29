@@ -21,20 +21,11 @@ class CatDogUNet:
         self.model.eval()
 
     def predict(self, image):
-        # pre-process input image (as required by model)
         transform_input = transforms.Compose([transforms.Resize((192, 192)), ])
         image = image.values
-        image = image[:, :, 0:3]  # make sure we have only 3 channels
+        image = image[:, :, 0:3]
         image = np.transpose(image, (2, 0, 1))
         image = image / 255
         image = torch.from_numpy(image).type(torch.float32)
         image = transform_input(image)
-
-        # make prediction
-        ### TODO ###
-        ### Apply the model to the pre-processed input image.
-        ### Return the segmentation mask.
-        return "FIX ME"
-
-
-CatDogUNet()
+        return self.model(image)
