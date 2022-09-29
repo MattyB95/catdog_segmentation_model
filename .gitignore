@@ -1,0 +1,11 @@
+# JetBrains
+.idea
+
+# Model
+catdog_segmentation_model/unet_model.ckpt
+
+# Project
+catdog_segmentation_model.egg-info
+
+# Python
+catdog_segmentation_model/__pycache__/
